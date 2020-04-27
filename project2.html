@@ -1,7 +1,67 @@
-<body style='background-image: url(https://usatftw.files.wordpress.com/2015/06/6796457-golden-state-warriors-wallpaper.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>
+<center><h2>Select a Team From Below</h2></center>
 
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Boston Celtics</div>
+	<div class='team'>Brooklyn Nets</div>
+	<div class='team'>New York Knicks</div>
+	<div class='team'>Philadelphia 76ers</div>
+	<div class='team'>Toronto Raptors</div>
+</div>
+
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Golden State Warriors</div>
+	<div class='team'>LA Clippers</div>
+	<div class='team'>Los Angeles Lakers</div>
+	<div class='team'>Phoenix Suns</div>
+	<div class='team'>Sacramento Kings</div>
+</div>
+
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Chicago Bulls</div>
+	<div class='team'>Cleveland Cavaliers</div>
+	<div class='team'>Detroit Pistons</div>
+	<div class='team'>Indiana Pacers</div>
+	<div class='team'>Milwaukee Bucks</div>
+</div>
+
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Atlanta Hawks</div>
+	<div class='team'>Charlotte Hornets</div>
+	<div class='team'>Miami Heat</div>
+	<div class='team'>Orlando Magic</div>
+	<div class='team'>Washington Wizards</div>
+</div>
+
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Denver Nuggets</div>
+	<div class='team'>Minnesota Timberwolves</div>
+	<div class='team'>Oklahoma City Thunder</div>
+	<div class='team'>Portland Trail Blazers</div>
+	<div class='team'>Utah Jazz</div>
+</div>
+
+<div style='width: 16%; display: inline-block;'>
+	<div class='team'>Dallas Mavericks</div>
+	<div class='team'>Houston Rockets</div>
+	<div class='team'>Memphis Grizzlies</div>
+	<div class='team'>New Orleans Pelicans</div>
+	<div class='team'>San Antonio Spurs</div>
+</div>
+
+<center><div style='margin-top: 50px;'><strong>View Stats For: </strong></div></center>
 <form method='GET' action='cgi-bin/getPlayers.cgi'>
-        <center><input type='submit' value='View Roster'></center>
+        <center><input id='selected-team' name='TeamName' type='submit' value='Select a Team!' style='width: 180px; cursor: pointer;'></center>
 </form>
+
+<script>
+var teams = document.getElementsByClassName("team")
+for (var i = 0; i < teams.length; i++) {
+	teams[i].addEventListener('click', function(event){
+		console.log(event)
+		document.getElementById("selected-team").value = event.srcElement.innerText;
+	})
+}
+
+</script>
 
 </body>
