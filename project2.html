@@ -1,8 +1,19 @@
 <link rel="stylesheet" type="text/css" href="project3.css">
 
-<center><h2>Select a Team From Below</h2></center>
+<body style='background-image: url(https://www.factinate.com/wp-content/uploads/2020/02/NBAinternal.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>
 
-<div style='width: 16%; display: inline-block;'>
+<center><h1 style='color: white; font-size: 4em;'>Welcome to MyNBAHub</h1></center>
+
+<center><h1 style='color: white;'>Select a Team From Below</h1></center>
+
+<center>
+<div style='background: linear-gradient(90deg, rgba(7,53,75,1) 0%, rgba(121,9,40,1) 100%); width: 1200px; padding: 10px; border-radius: 4px; color: white; margin-bottom: 50px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);'>
+<center><div style='color: white; margin-top: 10px;'><strong>View Roster For: </strong></div></center>
+<form method='GET' action='cgi-bin/getPlayers.cgi'>
+        <center><input id='selected-team' name='TeamName' type='submit' value='Select a Team!' style='width: 180px; cursor: pointer;'></center>
+</form>
+<div style='width: 33%; display: inline-block; margin-top: 10px;'>
+	<div class='region'>Atlantic</div>
 	<div class='team'>Boston Celtics</div>
 	<div class='team'>Brooklyn Nets</div>
 	<div class='team'>New York Knicks</div>
@@ -10,7 +21,8 @@
 	<div class='team'>Toronto Raptors</div>
 </div>
 
-<div style='width: 16%; display: inline-block;'>
+<div style='width: 33%; display: inline-block;'>
+	<div class='region'>Pacific</div>
 	<div class='team'>Golden State Warriors</div>
 	<div class='team'>LA Clippers</div>
 	<div class='team'>Los Angeles Lakers</div>
@@ -18,7 +30,8 @@
 	<div class='team'>Sacramento Kings</div>
 </div>
 
-<div style='width: 16%; display: inline-block;'>
+<div style='width: 33%; display: inline-block;'>
+	<div class='region'>Central</div>
 	<div class='team'>Chicago Bulls</div>
 	<div class='team'>Cleveland Cavaliers</div>
 	<div class='team'>Detroit Pistons</div>
@@ -26,7 +39,8 @@
 	<div class='team'>Milwaukee Bucks</div>
 </div>
 
-<div style='width: 16%; display: inline-block;'>
+<div style='width: 33%; display: inline-block; margin-top: 30px; margin-bottom: 15px;'>
+	<div class='region'>Southeast</div>
 	<div class='team'>Atlanta Hawks</div>
 	<div class='team'>Charlotte Hornets</div>
 	<div class='team'>Miami Heat</div>
@@ -34,7 +48,8 @@
 	<div class='team'>Washington Wizards</div>
 </div>
 
-<div style='width: 16%; display: inline-block;'>
+<div style='width: 33%; display: inline-block;'>
+	<div class='region'>Northwest</div>
 	<div class='team'>Denver Nuggets</div>
 	<div class='team'>Minnesota Timberwolves</div>
 	<div class='team'>Oklahoma City Thunder</div>
@@ -42,25 +57,25 @@
 	<div class='team'>Utah Jazz</div>
 </div>
 
-<div style='width: 16%; display: inline-block;'>
+<div style='width: 33%; display: inline-block;'>
+	<div class='region'>Southwest</div>
 	<div class='team'>Dallas Mavericks</div>
 	<div class='team'>Houston Rockets</div>
 	<div class='team'>Memphis Grizzlies</div>
 	<div class='team'>New Orleans Pelicans</div>
 	<div class='team'>San Antonio Spurs</div>
 </div>
+</div>
+</center>
 
-<center><div style='margin-top: 50px;'><strong>View Stats For: </strong></div></center>
-<form method='GET' action='cgi-bin/getPlayers.cgi'>
-        <center><input id='selected-team' name='TeamName' type='submit' value='Select a Team!' style='width: 180px; cursor: pointer;'></center>
-</form>
+<center><h1 style='color: white;'>Check Out the Latest News!</h1></center>
 
 <center>
-<div style='width: 400px; display: inline-block; vertical-align: top;'>
+<div style='width: 500px; display: inline-block; vertical-align: top;'>
 <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 <div style='width: 200px; display: inline-block'></div>
-<div style='width: 400px; display: inline-block; vertical-align: top;'>
+<div style='width: 500px; display: inline-block; vertical-align: top;'>
 <a class="twitter-timeline" href="https://twitter.com/ESPN?ref_src=twsrc%5Etfw">Tweets by ESPN</a>
 </div>
 </center>
