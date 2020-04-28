@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="project3.css">
+
 <center><h2>Select a Team From Below</h2></center>
 
 <div style='width: 16%; display: inline-block;'>
@@ -52,6 +54,16 @@
 <form method='GET' action='cgi-bin/getPlayers.cgi'>
         <center><input id='selected-team' name='TeamName' type='submit' value='Select a Team!' style='width: 180px; cursor: pointer;'></center>
 </form>
+
+<center>
+<div style='width: 400px; display: inline-block; vertical-align: top;'>
+<a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div style='width: 200px; display: inline-block'></div>
+<div style='width: 400px; display: inline-block; vertical-align: top;'>
+<a class="twitter-timeline" href="https://twitter.com/ESPN?ref_src=twsrc%5Etfw">Tweets by ESPN</a>
+</div>
+</center>
 
 <script>
 var teams = document.getElementsByClassName("team")

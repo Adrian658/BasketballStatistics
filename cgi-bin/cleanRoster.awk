@@ -43,7 +43,7 @@ BEGIN {
 			else if ($0 ~ /^\s*\[[[0-9][0-9]\]/ ) {
 				field_extend = 0
 				name = $1 " "  $2
-				if ($3 !~ /[A-Z][A-Z]$/ && $3 !~ /\s*C\s*/) {
+				if ($3 !~ /[A-Z][A-Z]$/ && $3 !~ /\s*C\s*/ && $3 !~ /\s*F\s*/) {
 					name = name " " $3
 					field_extend = 1
 				}
