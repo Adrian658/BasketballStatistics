@@ -14,6 +14,12 @@ BEGIN {
 
 	print "<body style='background-image: url(https://usatftw.files.wordpress.com/2015/06/6796457-golden-state-warriors-wallpaper.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>"
 
+	#Print the team name	
+	gsub("+", " ", team_name)
+	print "<center><h1>"
+	print team_name
+	print "</h1></center>"
+
 	print "<div style='margin-top: 20px;'>"
         print "<strong style='width: 110px; display: inline-block;'></strong>"
         print "<strong style='width: 180px; display: inline-block;'>Name</strong>"
@@ -35,17 +41,22 @@ BEGIN {
 				playerID = $0
 			}
 			else if ($0 ~ /^\s*\[[[0-9][0-9]\]/ ) {
+				field_extend = 0
 				name = $1 " "  $2
+				if ($3 !~ /[A-Z][A-Z]$/ && $3 !~ /\s*C\s*/) {
+					name = name " " $3
+					field_extend = 1
+				}
 				gsub(/[0-9]/, "", name)
 				sub(/\[/, "", name)
 				sub(/\]/, "", name)
-				position = $3
-				age = $4
-				height = $5 $6
+				position = $(3+field_extend)
+				age = $(4+field_extend)
+				height = $(5+field_extend) $(6+field_extend)
 				sub(/"/, "", height)
-				weight = $7 " " $8
+				weight = $(7+field_extend) " " $(8+field_extend)
 				school = ""
-				for (i = 9; i < NF; i++) {
+				for (i = 9+field_extend; i < NF; i++) {
                                         school = school " " $i
                                 }
 				salary = $NF

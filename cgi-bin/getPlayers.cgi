@@ -7,7 +7,7 @@ BEGIN {
 	team_len = split(queries[2], team_name, /+/)
 	team_region = find_region(team_name[team_len])
 
-	system("lynx -dump 'https://www.espn.com/nba/team/roster/_/name/" team_region "/" format_name(team_name, team_len)  "' | awk -f cleanRoster.awk")
+	system("lynx -dump 'https://www.espn.com/nba/team/roster/_/name/" team_region "/" format_name(team_name, team_len)  "' | awk -v team_name=" queries[2] " -f cleanRoster.awk")
 }
 
 function find_region(team_name) {

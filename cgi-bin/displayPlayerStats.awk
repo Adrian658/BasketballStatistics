@@ -5,6 +5,7 @@ BEGIN {
 	playerOverall = 0
 	gameLog = 0
 	summaryStats = 0
+	summarized = 0
 
 	while (getline) {
 		if (playerOverall >= 1) {
@@ -42,8 +43,9 @@ BEGIN {
 				determineGameStatistics($0)
 			}
 		}
-		if ($0 ~ /Golden State Warriors/ && playerOverall == 0) {
+		if ($0 ~ /^\s*[A-Z][a-z].*$/ && playerOverall == 0 && summarized == 0) {
                         playerOverall = 1
+			summarized = 1
                 }
 		if ($0 ~ /Date OPP Result MIN FG FG% 3PT 3P% FT FT% REB AST BLK STL PF TO PTS/) {
 			gameLog = 1
@@ -126,11 +128,14 @@ function determineGameStatistics(data) {
 function determineSummaryStatistics(data) {
 	if (playerOverall == 1) {
                 playerData[0] = data #Name
-        }
+	}
+	else if (playerOverall == 5) {
+		playerData[15] = data #Team
+	}
 	else if (playerOverall == 7) {
 		sub(/*/, "", data)
                 playerData[1] = data #Number
-        }
+	}
         else if (playerOverall == 8) {
 		sub(/*/, "", data)
                 playerData[2] = data #Position
@@ -188,7 +193,7 @@ function determineSummaryStatistics(data) {
 		print "<div style='background-color: rgba(0, 0, 0, 0.6); color: white;'>"
 		print "<div style='text-align: center;'>"
 		print "<div style='font-size: 4em;'>" playerData[0] "</div>"
-		print "<span style='font-size: 1.5em'>Golden State Warriors | " playerData[1] "</span>"
+		print "<span style='font-size: 1.5em'>" playerData[15] " | " playerData[1] "</span>"
 		print "<span style='font-size: 1.5em'> | " playerData[2]  "</span>"
 		print "</div>"
 
