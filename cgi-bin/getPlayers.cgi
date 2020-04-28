@@ -1,7 +1,7 @@
 #! /usr/bin/awk -f
 BEGIN {
         print "Content-type: text/html\n"
-        print "<a href='../project2.html'>Go Back to Home Page</a>"
+        print "<a href='../project2.html' style='color: white; position: absolute; margin-left: 20px;'>Back</a>"
 	
         split(ENVIRON["QUERY_STRING"], queries, /=/)
 	team_len = split(queries[2], team_name, /+/)

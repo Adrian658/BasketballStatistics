@@ -1,26 +1,17 @@
 BEGIN {
-	#Get the coaches name
-	#while (getline) {
-	#	if ($0 ~ /Coach: /){
-	#		print $0
-	#	}
-	#}
-
-	#Get the players and their summary statistics and print out links to more in depth statistics page
 	
-
 	roster = 0
 	playerID = 0
 
-	print "<body style='background-image: url(https://usatftw.files.wordpress.com/2015/06/6796457-golden-state-warriors-wallpaper.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>"
+	print "<body style='background-image: url(https://www.factinate.com/wp-content/uploads/2020/02/NBAinternal.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>"
 
 	#Print the team name	
 	gsub("+", " ", team_name)
-	print "<center><h1>"
+	print "<center><h1 style='margin-top: 30px; color: white; font-size: 4em;'>"
 	print team_name
 	print "</h1></center>"
 
-	print "<div style='margin-top: 20px;'>"
+	print "<div style='margin-top: 20px; color: white;'>"
         print "<strong style='width: 110px; display: inline-block;'></strong>"
         print "<strong style='width: 180px; display: inline-block;'>Name</strong>"
         print "<strong style='width: 80px; display: inline-block;'>Position</strong>"
@@ -43,7 +34,7 @@ BEGIN {
 			else if ($0 ~ /^\s*\[[[0-9][0-9]\]/ ) {
 				field_extend = 0
 				name = $1 " "  $2
-				if ($3 !~ /[A-Z][A-Z]$/ && $3 !~ /\s*C\s*/ && $3 !~ /\s*F\s*/) {
+				if ($3 !~ /[A-Z][A-Z]$/ && $3 !~ /\s*[A-Z]\s*$/) {
 					name = name " " $3
 					field_extend = 1
 				}
