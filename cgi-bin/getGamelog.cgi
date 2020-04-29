@@ -5,5 +5,5 @@ BEGIN {
 	split(ENVIRON["QUERY_STRING"], queries, /=/)
 	playerID = queries[2]
 
-	system("lynx -dump 'https://www.espn.com/nba/player/gamelog/_/id/" playerID "' | awk -f displayPlayerStats.awk")
+	system("lynx -dump 'https://www.espn.com/nba/player/gamelog/_/id/" playerID "' | awk -v id='"playerID"' -f displayPlayerStats.awk")
 }

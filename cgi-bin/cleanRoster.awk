@@ -3,6 +3,7 @@ BEGIN {
 	roster = 0
 	playerID = 0
 
+	print "<style>#tweet-container > ::-webkit-scrollbar {width: 0px; background: transparent;}</style>"
 	print "<body style='background-image: url(https://www.factinate.com/wp-content/uploads/2020/02/NBAinternal.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: cover;'>"
 
 	#Print the team name	
@@ -11,6 +12,8 @@ BEGIN {
 	print team_name
 	print "</h1></center>"
 
+	print "<div style='display: table; clear: both; width: 100%;'>"
+	print "<div style='float: left; width: 73%; padding-left: 25px;'>"
 	print "<div style='margin-top: 20px; color: white;'>"
         print "<strong style='width: 110px; display: inline-block;'></strong>"
         print "<strong style='width: 180px; display: inline-block;'>Name</strong>"
@@ -19,7 +22,7 @@ BEGIN {
         print "<strong style='width: 80px; display: inline-block;'>Height</strong>"
         print "<strong style='width: 100px; display: inline-block;'>Weight</strong>"
         print "<strong style='width: 120px; display: inline-block;'>Salary</strong>"
-        print "<strong style='width: 400px; display: inline-block;'>School</strong>"
+        print "<strong style='width: 225px; display: inline-block;'>School</strong>"
         print "</div>"
 
 	while (getline) {
@@ -64,7 +67,7 @@ BEGIN {
 				print "<div style='width: 80px; display: inline-block;'>" height "</div>"
 				print "<div style='width: 100px; display: inline-block;'>" weight "</div>"
 				print "<div style='width: 120px; display: inline-block;'>" salary "</div>"
-				print "<div style='width: 400px; display: inline-block;'>" school "</div>"
+				print "<div style='width: 225px; display: inline-block;'>" school "</div>"
 				print "</div>"
 			}
 		}
@@ -77,5 +80,46 @@ BEGIN {
 	}
 }
 END {
+	print "</div>"
+	print "<div id='tweet-container' style='float: left; width: 25%; position: sticky; top: 0; padding-top: 55px;'>"
+	print "<div style='overflow: auto; height: 90vh; padding: 0 25px 0 25px;'>"
+	print "<a class='twitter-timeline' href='https://twitter.com/" find_twitter_handle(team_name)  "?ref_src=twsrc%5Etfw'>Tweets by NBA</a> <script async src='https://platform.twitter.com/widgets.js' charset='utf-8'></script>"
+	print "</div>"
+	print "</div>"
 	print "</body>"
+}
+
+function find_twitter_handle(team) {
+	team_map["Boston Celtics"] = "celtics"
+        team_map["Brooklyn Nets"] = "BrooklynNets"
+        team_map["New York Knicks"] = "nyknicks"
+        team_map["Philadelphia 76ers"] = "sixers"
+        team_map["Toronto Raptors"] = "Raptors"
+        team_map["Golden State Warriors"] = "warriors"
+        team_map["LA Clippers"] = "LAClippers"
+        team_map["Los Angeles Lakers"] = "Lakers"
+        team_map["Phoenix Suns"] = "Suns"
+        team_map["Sacramento Kings"] = "SacramentoKings"
+        team_map["Chicago Bulls"] = "chicagobulls"
+        team_map["Cleveland Cavaliers"] = "cavs"
+        team_map["Detroit Pistons"] = "DetroitPistons"
+        team_map["Indiana Pacers"] = "Pacers"
+        team_map["Milwaukee Bucks"] = "Bucks"
+        team_map["Atlanta Hawks"] = "ATLHawks"
+        team_map["Charlotte Hornets"] = "hornets"
+        team_map["Miami Heat"] = "MiamiHEAT"
+        team_map["Orlando Magic"] = "OrlandoMagic"
+        team_map["Washington Wizards"] = "WashWizards"
+        team_map["Denver Nuggets"] = "nuggets"
+        team_map["Minnesota Timberwolves"] = "Timberwolves"
+        team_map["Oklahoma City Thunder"] = "okcthunder"
+        team_map["Portland Trail Blazers"] = "trailblazers"
+        team_map["Utah Jazz"] = "utahjazz"
+        team_map["Dallas Mavericks"] = "dallasmavs"
+        team_map["Houston Rockets"] = "HoustonRockets"
+        team_map["Memphis Grizzlies"] = "memgrizz"
+        team_map["New Orleans Pelicans"] = "PelicansNBA"
+        team_map["San Antonio Spurs"] = "spurs"
+
+        return team_map[team_name]
 }

@@ -212,23 +212,25 @@ function determineSummaryStatistics(data) {
 
 		print "<center>"
 		print "<div style='margin-top: 30px; padding: 30px; width: 80%; background-color: rgba(0, 0, 0, 0.6); color: white;'>"
-		print "<div style='text-align: center;'>"
-		print "<div style='font-size: 4em;'>" playerData[0] "</div>"
+		
+		print "<div style='display: table; clear: both; display: flex; justify-content: flex-end; align-items: center; margin-bottom: 30px;'>"
+		print "<img src='https://a.espncdn.com/i/headshots/nba/players/full/" id  ".png' style='float: left; width: 400; height: 300px;'>"
+		print "<div style='width: 600px; float: left;'><div style='font-size: 3em; align-self: flex-end; margin-bottom: 20px;'>" playerData[0] "</div>"
 		print "<span style='font-size: 1.5em'>" playerData[15] " | " playerData[1] "</span>"
 		print "<span style='font-size: 1.5em'> | " playerData[2]  "</span>"
-		print "</div>"
+		print "</div></div>"
 
 		print "<div style='margin-left: 20%; margin-top: 25px; text-align: left;'>"
-		print "<div><span style='width: 100px; display: inline-block;'>Height: </span>" "<span style='width: 396px; display: inline-block'>" playerData[3] "</span>" "<strong>" playerData[10] "</strong></div>"
-		print "<div><span style='width: 100px; display: inline-block;'>Weight: </span>" "<span style='width: 400px; display: inline-block'>" playerData[4] "</span>" "<span>PTS - " playerData[11] "</span></div>"
-		print "<div><span style='width: 100px; display: inline-block;'>DOB/Age: </span>" "<span style='width: 400px; display: inline-block'>" playerData[5] " " playerData[6] "</span>" "<span>REB - " playerData[12] "</span></div>"
-		print "<div><span style='width: 100px; display: inline-block;'>College: </span>" "<span style='width: 400px; display: inline-block'>" playerData[7] "</span>" "<span>AST - " playerData[13] "</span></div>"
+		print "<div><span style='width: 100px; display: inline-block;'>Height: </span>" "<span style='width: 446px; display: inline-block'>" playerData[3] "</span>" "<strong>" playerData[10] "</strong></div>"
+		print "<div><span style='width: 100px; display: inline-block;'>Weight: </span>" "<span style='width: 450px; display: inline-block'>" playerData[4] "</span>" "<span>PTS - " playerData[11] "</span></div>"
+		print "<div><span style='width: 100px; display: inline-block;'>DOB/Age: </span>" "<span style='width: 450px; display: inline-block'>" playerData[5] " " playerData[6] "</span>" "<span>REB - " playerData[12] "</span></div>"
+		print "<div><span style='width: 100px; display: inline-block;'>College: </span>" "<span style='width: 450px; display: inline-block'>" playerData[7] "</span>" "<span>AST - " playerData[13] "</span></div>"
 		if (playerData[8] ~ /[0-9][0-9][0-9][0-9]:*/) {
-			print "<div><span style='width: 100px; display: inline-block;'>Draft Info: </span>" "<span style='width: 400px; display: inline-block'>" playerData[8] "</span>" "<span>PER - " playerData[14] "</span></div>"
+			print "<div><span style='width: 100px; display: inline-block;'>Draft Info: </span>" "<span style='width: 450px; display: inline-block'>" playerData[8] "</span>" "<span>PER - " playerData[14] "</span></div>"
 			print "<div><span style='width: 96px; display: inline-block;'>Status: </span><span>" playerData[9] "</span></div>"
 		}
 		else {
-			print "<div><span style='width: 100px; display: inline-block'>Status: </span>" "<span style='width: 400px; display: inline-block'>" playerData[8] "</span>" "<span>PER - " playerData[14] "</span></div>"
+			print "<div><span style='width: 100px; display: inline-block'>Status: </span>" "<span style='width: 450px; display: inline-block'>" playerData[8] "</span>" "<span>PER - " playerData[14] "</span></div>"
 			print "<div><span style='width: 96px; display: inline-block'>Experience: </span><span>" playerData[9] "</span></div>"
 		}
 		print "</div></div></center>"
