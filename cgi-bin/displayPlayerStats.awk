@@ -50,7 +50,7 @@ BEGIN {
 				determineGameStatistics($0)
 			}
 		}
-		if ($0 ~ /^\s*[A-Z][a-z].*$/ && playerOverall == 0 && summarized == 0) {
+		if ($0 ~ /^\s*[A-Z][A-Za-z].*$/ && playerOverall == 0 && summarized == 0) {
                         playerOverall = 1
 			summarized = 1
                 }
